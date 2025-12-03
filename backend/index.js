@@ -20,7 +20,8 @@ connectDB(process.env.URI);
 const app = express();
 
 const corsOptions = {
-        origin: 'http://localhost:5173', // Allow requests only from this origin
+        origin: ['http://localhost:5173',process.env.PROD_URL], 
+        // Allow requests only from this origin
         methods: ['GET', 'POST','PUT','DELETE'], // Allow specific HTTP methods
         // allowedHeaders: ['Content-Type'], // Allow specific headers
 };
